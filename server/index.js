@@ -20,6 +20,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const {
   WHATSAPP_API_TOKEN,
   OWNER_PHONE,
+  UPI_ID,
+  UPI_NAME,
   PORT = 3000,
 } = process.env;
 
@@ -37,6 +39,13 @@ app.use(express.urlencoded({ extended: false })); // parse login form POST
 // Serve frontend static files
 app.use(express.static(join(__dirname, '../public')));
 app.use('/src', express.static(join(__dirname, '../src'))); // Restored to prevent app breakage
+
+app.get('/api/config', (req, res) => {
+  res.json({
+    upiId: UPI_ID || '7981149863@ptaxis',
+    upiName: UPI_NAME || 'Lake Valley Box Stadium'
+  });
+});
 
 const bookingLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 10 });
 app.post('/api/bookings/initiate', bookingLimiter);

@@ -3,8 +3,22 @@
 
 import { verifyPayment } from './api.js';
 
-const UPI_ID   = '7981149863@ptaxis';
-const UPI_NAME = 'Lake Valley Box Stadium';
+let UPI_ID   = '7981149863@ptaxis';
+let UPI_NAME = 'Lake Valley Box Stadium';
+
+// Fetch config once when the module loads or on first payment
+async function fetchConfig() {
+  try {
+    const res = await fetch('/api/config');
+    if (res.ok) {
+      const config = await res.json();
+      UPI_ID = config.upiId;
+      UPI_NAME = config.upiName;
+    }
+  } catch (err) {
+    console.error('Failed to fetch payment config:', err);
+  }
+}
 
 /**
  * Build a UPI deep link for the given amount.
@@ -42,6 +56,7 @@ export class PaymentHandler {
    * @param {number} amount        - rupees
    */
   async open(orderId, customerName, customerPhone, amount = 250) {
+    await fetchConfig();
     // Inject the UPI payment panel into the modal body (step 2)
     const modalBody = document.querySelector('.modal__body');
     if (!modalBody) return;
