@@ -84,10 +84,10 @@ router.post('/slots/unblock', requireAuth, async (req, res) => {
   res.redirect(`/admin/slots?date=${encodeURIComponent(date)}`);
 });
 
-router.post('/pricing', requireAuth, (req, res) => {
+router.post('/pricing', requireAuth, async (req, res) => {
   const { category, price, date } = req.body;
   if (!category || !price) return res.status(400).json({ error: 'category and price required' });
-  updateCategoryPrice(category, price);
+  await updateCategoryPrice(category, price);
   res.redirect(`/admin/slots?date=${encodeURIComponent(date || new Date().toISOString().slice(0, 10))}`);
 });
 

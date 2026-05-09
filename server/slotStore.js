@@ -22,6 +22,17 @@ export let SLOT_PRICES = {
   Night:   400,
 };
 
+async function syncPrices() {
+  try {
+    const doc = await db.collection('settings').doc('pricing').get();
+    if (doc.exists) {
+      Object.assign(SLOT_PRICES, doc.data());
+    }
+  } catch (err) {
+    console.error('[SlotStore] Failed to sync prices from Firestore:', err.message);
+  }
+}
+
 function category(startHour) {
   if (startHour >= 6  && startHour < 12) return 'Morning';
   if (startHour >= 12 && startHour < 18) return 'Evening';
@@ -108,6 +119,7 @@ export async function unblockSlot(date, slotId) {
 }
 
 export async function getSlots(date) {
+  await syncPrices();
   const statuses = await getSlotData(date);
 
   return DEFAULT_SLOTS.map((slot) => {
@@ -135,10 +147,16 @@ export async function releaseExpiredLocks() {
   // This is harder in Firestore without a full scan, but we can do it on demand in getSlots/lockSlot
 }
 
-export function updateCategoryPrice(category, newPrice) {
+export async function updateCategoryPrice(category, newPrice) {
   if (SLOT_PRICES.hasOwnProperty(category)) {
     SLOT_PRICES[category] = Number(newPrice);
-    return true;
+    try {
+      await db.collection('settings').doc('pricing').set(SLOT_PRICES, { merge: true });
+      return true;
+    } catch (err) {
+      console.error('[SlotStore] Failed to save prices to Firestore:', err.message);
+      return false;
+    }
   }
   return false;
 }
