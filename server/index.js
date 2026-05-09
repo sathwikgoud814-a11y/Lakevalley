@@ -62,8 +62,10 @@ const loginLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 5, message: 'Too
 app.use('/admin/login', loginLimiter);
 app.use('/admin', adminRouter);
 
-app.listen(PORT, () => {
-  console.log(`THE STADIUM BOX server running on port ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`THE STADIUM BOX server running on port ${PORT}`);
+  });
+}
 
 export default app;
