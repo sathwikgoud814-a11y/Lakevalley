@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="razorpay-key" content="rzp_test_placeholder" />
+  <title>The Stadium Box — Elite Indoor Cricket, Hyderabad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" aria-label="Site navigation">
+    <div class="nav__logo">
+      <span class="nav__logo-mark">◆</span>
+      <span class="nav__logo-text">LAKE VALLEY BOX STADIUM</span>
+    </div>
+    <div class="nav__right">
+      <a href="#features" class="nav__link">View Facility</a>
+      <button class="nav__theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark mode">
+        <span class="nav__theme-icon nav__theme-icon--moon" aria-hidden="true">🌙</span>
+        <span class="nav__theme-icon nav__theme-icon--sun" aria-hidden="true">☀️</span>
+      </button>
+      <a href="#slots" class="nav__cta" id="nav-cta-btn">Book Slot Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="/IMG_0812.jpg" alt="" class="hero__bg-img" />
+      <div class="hero__bg-overlay"></div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__eyebrow" data-reveal>
+        <span class="hero__dot"></span>
+        Hyderabad's Fastest Booking Box Stadium
+      </div>
+      <h1 class="hero__headline" data-reveal>
+        Book Your Cricket Slot<br />
+        <em>in 60 Seconds.</em>
+      </h1>
+      <p class="hero__subtext" data-reveal>
+        Play on premium FIFA-standard turf under professional floodlights.<br class="hero__br" />
+        Instant WhatsApp confirmation. 24/7 Access. No waiting, no calls.
+      </p>
+      <div class="hero__actions" data-reveal>
+        <a href="#slots" class="btn btn--primary" id="hero-cta">
+          Book Slot Now
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="#slots" class="btn btn--ghost">Check Availability</a>
+      </div>
+      <div class="hero__stats" data-reveal>
+        <div class="hero__stat">
+          <span class="hero__stat-num">1,500<span class="hero__stat-plus">+</span></span>
+          <span class="hero__stat-label">Players Served</span>
+        </div>
+        <div class="hero__stat-divider" aria-hidden="true"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">4.8/5</span>
+          <span class="hero__stat-label">Top Rated</span>
+        </div>
+        <div class="hero__stat-divider" aria-hidden="true"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num">24/7</span>
+          <span class="hero__stat-label">Play Anytime</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Social Proof Bar -->
+  <div class="trust-bar" aria-label="Trusted by">
+    <div class="trust-bar__inner">
+      <span class="trust-bar__label">Ideal For</span>
+      <div class="trust-bar__items">
+        <div class="trust-bar__item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="3" stroke="#28D070" stroke-width="1.5" />
+            <path d="M8 12h8M12 8v8" stroke="#28D070" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          Corporate Teams
+        </div>
+        <div class="trust-bar__sep" aria-hidden="true">·</div>
+        <div class="trust-bar__item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" stroke="#28D070" stroke-width="1.5" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#28D070" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          College Groups
+        </div>
+        <div class="trust-bar__sep" aria-hidden="true">·</div>
+        <div class="trust-bar__item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              stroke="#28D070" stroke-width="1.5" stroke-linejoin="round" />
+          </svg>
+          Weekend Players
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Features Grid -->
+  <section id="features" aria-label="Facility Features">
+    <div class="features__inner">
+      <div class="section-header" data-reveal>
+        <p class="section-eyebrow">The Experience</p>
+        <h2 class="section-title">Built for Performance</h2>
+      </div>
+      <div class="features__grid">
+        <div class="feature-card" data-reveal>
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#28D070"
+                stroke-width="1.5" />
+              <path d="M8 12h8M12 8v8" stroke="#28D070" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Pro-Standard Turf</h3>
+          <p class="feature-card__desc">Play with professional bounce and pace — protect your joints with FIFA-grade shock-absorption artificial grass.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="#28D070" stroke-width="1.5" />
+              <path
+                d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                stroke="#28D070" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Zero-Glare Lighting</h3>
+          <p class="feature-card__desc">Play even at midnight with perfect visibility — stadium-grade lights ensure no shadows or distractions.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" stroke="#28D070" stroke-width="1.5" />
+              <path d="M9 7h6M9 11h6M9 15h4" stroke="#28D070" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">60-Sec UPI Booking</h3>
+          <p class="feature-card__desc">Stop waiting for confirmation calls — select your slot, pay instantly, and get WhatsApp alerts in seconds.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#28D070" stroke-width="1.5"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Premium Kits Provided</h3>
+          <p class="feature-card__desc">Just show up and play — we provide high-quality bats and balls so you don't have to carry heavy gear.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#28D070" stroke-width="1.5"
+                stroke-linecap="round" />
+              <circle cx="9" cy="7" r="4" stroke="#28D070" stroke-width="1.5" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#28D070" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Private Team Dugout</h3>
+          <p class="feature-card__desc">Rest like pros between overs — dedicated seating and chilled water for your entire group.</p>
+        </div>
+        <div class="feature-card" data-reveal>
+          <div class="feature-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="#28D070" stroke-width="1.5" />
+              <path d="M12 6v6l4 2" stroke="#28D070" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Always Open (24/7)</h3>
+          <p class="feature-card__desc">Your schedule, your game — book any time from early morning nets to midnight high-energy matches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section id="stats" aria-label="Stats">
+    <div class="stats__inner">
+      <div class="stats__grid">
+        <div class="stats__item" data-reveal>
+          <span class="stats__num">1,200<span class="stats__plus">+</span></span>
+          <span class="stats__label">Matches Played</span>
+        </div>
+        <div class="stats__item" data-reveal>
+          <span class="stats__num">98<span class="stats__plus">%</span></span>
+          <span class="stats__label">Pitch Quality Rating</span>
+        </div>
+        <div class="stats__item" data-reveal>
+          <span class="stats__num">24/7</span>
+          <span class="stats__label">Operational</span>
+        </div>
+        <div class="stats__item" data-reveal>
+          <span class="stats__num">60<span class="stats__plus">s</span></span>
+          <span class="stats__label">To Book a Slot</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" aria-label="Gallery">
+    <div class="section-header section-header--center" data-reveal>
+      <p class="section-eyebrow">The Venue</p>
+      <h2 class="section-title">See It for Yourself</h2>
+      <p class="section-sub">Lake Valley Box Stadium — Narsingi, Hyderabad</p>
+    </div>
+    <div class="gallery__track-wrap" aria-hidden="true">
+      <div class="gallery__track">
+        <img src="/IMG_0813.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0816.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0817.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0820.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0821.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0822.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0824.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0825.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0829.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0813.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0816.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0817.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0820.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0821.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0822.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0824.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0825.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+        <img src="/IMG_0829.jpg" alt="Lake Valley Box Stadium" class="gallery__img" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Slot Picker -->
+  <section id="slots" aria-label="Slot Picker">
+    <div class="slots__header" data-reveal>
+      <p class="section-eyebrow">Direct Booking</p>
+      <h2 class="section-title">Secure Your Slot</h2>
+      <p class="section-sub">Select 30-min blocks. ⚡ Instant confirmation via WhatsApp.</p>
+      
+      <!-- Scarcity / Urgency Indicators -->
+      <div class="urgency-banner" id="urgency-banner" data-reveal>
+        <div class="urgency-item">
+          <span class="urgency-dot urgency-dot--live"></span>
+          <span id="recent-bookings-count">14 people</span> booked in the last 6 hours
+        </div>
+        <div class="urgency-item urgency-item--alert">
+          🔥 Only <span id="slots-left-count">4 slots</span> left for tonight
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Flow -->
+  <section id="booking" aria-label="Booking Flow"></section>
+
+  <!-- Reviews -->
+  <section id="reviews" aria-label="Customer Reviews">
+    <div class="reviews__inner">
+      <div class="section-header section-header--center" data-reveal>
+        <p class="section-eyebrow">Social Proof</p>
+        <h2 class="section-title">1,500+ Happy Players</h2>
+        <p class="section-sub">
+          ⭐⭐⭐⭐⭐ 4.8 ·
+          <button type="button" class="reviews__write-link" id="write-review-btn">Share your experience</button>
+        </p>
+      </div>
+      <div class="reviews__grid" id="reviews-grid"></div>
+    </div>
+  </section>
+
+  <!-- Review Modal -->
+  <div class="modal-backdrop" id="review-modal" hidden role="dialog" aria-modal="true" aria-label="Write a review">
+    <div class="modal review-modal__box">
+      <div class="modal__header">
+        <h2 class="modal__title">Leave a Review</h2>
+        <button class="modal__close" id="review-modal-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal__form-group">
+          <label class="modal__label" for="review-name">Your Name</label>
+          <input class="modal__input" type="text" id="review-name" placeholder="e.g. Rahul S." maxlength="60" />
+        </div>
+        <div class="modal__form-group">
+          <label class="modal__label">Rating</label>
+          <div class="review-stars" id="review-stars" role="radiogroup" aria-label="Rating">
+            <button type="button" class="review-star" data-value="1" aria-label="1 star">★</button>
+            <button type="button" class="review-star" data-value="2" aria-label="2 stars">★</button>
+            <button type="button" class="review-star" data-value="3" aria-label="3 stars">★</button>
+            <button type="button" class="review-star" data-value="4" aria-label="4 stars">★</button>
+            <button type="button" class="review-star" data-value="5" aria-label="5 stars">★</button>
+          </div>
+        </div>
+        <div class="modal__form-group">
+          <label class="modal__label" for="review-text">Your Review</label>
+          <textarea class="modal__input review-modal__textarea" id="review-text"
+            placeholder="Tell others about your experience..." maxlength="500" rows="4"></textarea>
+        </div>
+        <button type="button" class="modal__btn" id="review-submit-btn">Post Review</button>
+        <p class="modal__error" id="review-error" hidden></p>
+        <p class="review-modal__success" id="review-success" hidden>✅ Thanks! Your review has been submitted.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Location -->
+  <section id="location" aria-label="Location">
+    <div class="location__inner">
+      <div class="section-header section-header--center" data-reveal>
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="section-title">Lake Valley Box Stadium</h2>
+        <p class="section-sub">Narsingi, Hyderabad</p>
+      </div>
+      <div class="location__map-wrapper" data-reveal>
+        <iframe class="location__map" title="Lake Valley Box Stadium location map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.295466430575!2d78.3204059!3d17.3495098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb95000611cceb%3A0xecfeb856aeed233c!2sLAKE%20VALLEY%20BOX%20STADIUM!5e0!3m2!1sen!2sin!4v1775739414603!5m2!1sen!2sin"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cricket Mini-Game Section (Repositioned) -->
+  <section id="cricket-game" aria-label="Play cricket mini-game">
+    <canvas id="cricket-canvas" aria-hidden="true"></canvas>
+    <div class="game__flash" id="game-flash" aria-hidden="true"></div>
+
+    <!-- Start Overlay -->
+    <div class="game__start-overlay" id="game-start-overlay">
+      <p class="game__start-title" style="color: var(--green); text-shadow: 0 0 20px rgba(40,208,112,0.4);">The Golden
+        Ball</p>
+      <p class="game__start-sub">Can you hit the perfect shot?</p>
+      <button class="game__start-btn" id="game-start-btn" type="button">PLAY (1 BALL)</button>
+    </div>
+
+    <!-- Hit Outcome Overlay -->
+    <div class="game__hit-outcome" id="game-hit-outcome" aria-hidden="true">
+      <span class="game__hit-text" id="game-hit-text"></span>
+    </div>
+
+    <!-- Action Button -->
+    <div class="game__action-wrap" id="game-action-wrap" aria-hidden="true">
+      <button class="game__hit-btn" id="game-hit-btn" type="button">🏏 HIT SHOT</button>
+      <button class="game__hit-btn" id="game-next-btn" type="button" style="display: none; background: #39ff14; color: #000;">⚾ NEXT BALL</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" aria-label="Footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo-mark">◆</span>
+        <span class="footer__logo-text">LAKE VALLEY BOX STADIUM</span>
+      </div>
+      <p class="footer__tagline">Book. Play. Repeat.</p>
+      <p class="footer__tech">
+        Technology by <a href="flintnco.vercel.app" class="footer__tech-link" rel="noopener">Flint Co.</a>
+      </p>
+      <p class="footer__copy">© 2026 Lake Valley Box Stadium. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA Bar -->
+  <div id="cta-bar" role="complementary" aria-label="Book Now">
+    <button id="cta-bar-btn" type="button">🏏 LOCK YOUR SLOT — <span style="font-size: 0.8em; opacity: 0.8;">Takes &lt;60s</span></button>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
