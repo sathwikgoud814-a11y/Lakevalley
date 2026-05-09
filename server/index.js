@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: false })); // parse login form POST
 
 // Serve frontend static files
 app.use(express.static(join(__dirname, '../public')));
-app.use('/src', express.static(join(__dirname, '../src'))); // Restored to prevent app breakage
+app.use('/src', express.static(join(__dirname, '../public/src'))); // Restored to prevent app breakage
 
 app.get('/api/config', (req, res) => {
   res.json({
