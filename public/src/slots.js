@@ -4,7 +4,7 @@
 import * as api from './api.js';
 
 const POLL_INTERVAL_MS = 30_000;
-const CATEGORIES = ['Morning', 'Evening', 'Night'];
+const CATEGORIES = ['Day', 'Night'];
 
 export function formatSlotLabel(start, end) {
   return `${formatTime(start)} – ${formatTime(end)}`;
@@ -89,9 +89,18 @@ export class SlotGrid {
     }
 
     if (this._currentDate) {
+      // ── Date Selector ────────────────────────────────────
+      this._container.appendChild(this._buildDateSelector());
+
       const heading = document.createElement('h2');
       heading.className = 'slots__heading';
-      heading.textContent = `Available Slots — ${this._currentDate}`;
+      const dateObj = new Date(this._currentDate);
+      const displayDate = dateObj.toLocaleDateString('en-IN', { 
+        weekday: 'long', 
+        day: 'numeric', 
+        month: 'long' 
+      });
+      heading.textContent = `Available Slots — ${displayDate}`;
       this._container.appendChild(heading);
 
       const urgency = document.createElement('p');
@@ -244,6 +253,50 @@ export class SlotGrid {
     }
 
     return cell;
+  }
+
+  // ── Date Selector ──────────────────────────────────────
+  
+  _buildDateSelector() {
+    const selector = document.createElement('div');
+    selector.className = 'slots__date-selector';
+    selector.setAttribute('aria-label', 'Select a date');
+
+    const next7Days = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date();
+      d.setDate(d.getDate() + i);
+      next7Days.push(d);
+    }
+
+    next7Days.forEach((date) => {
+      const iso = date.toISOString().slice(0, 10);
+      const isActive = iso === this._currentDate;
+
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className = `slots__date-pill ${isActive ? 'slots__date-pill--active' : ''}`;
+      pill.setAttribute('aria-pressed', String(isActive));
+      
+      const dayLabel = date.toLocaleDateString('en-IN', { weekday: 'short' });
+      const dateLabel = date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+
+      pill.innerHTML = `
+        <span class="slots__date-pill-day">${dayLabel}</span>
+        <span class="slots__date-pill-date">${dateLabel}</span>
+      `;
+
+      pill.addEventListener('click', () => {
+        if (iso === this._currentDate) return;
+        this._selectedIds.clear(); // Clear selection when changing date
+        this.fetch(iso);
+        this.startPolling(iso); // Update polling date
+      });
+
+      selector.appendChild(pill);
+    });
+
+    return selector;
   }
 
   // ── Filter bar ──────────────────────────────────────────

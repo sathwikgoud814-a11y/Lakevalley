@@ -6,7 +6,7 @@ const STEP_LABELS = ['Details', 'Payment', 'Success'];
 /** Full price for a slot based on its category */
 function slotTotalPrice(slot) {
   if (slot?.category === 'Night') return 400;
-  return 300; // Morning and Evening
+  return 300; // Day
 }
 
 /** Total amount to pay upfront for all selected slots */

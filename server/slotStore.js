@@ -17,9 +17,8 @@ function fmtHalf(totalMins) {
 }
 
 export let SLOT_PRICES = {
-  Morning: 300,
-  Evening: 300,
-  Night:   400,
+  Day:   300,
+  Night: 400,
 };
 
 async function syncPrices() {
@@ -33,17 +32,16 @@ async function syncPrices() {
   }
 }
 
-function category(startHour) {
-  if (startHour >= 6  && startHour < 12) return 'Morning';
-  if (startHour >= 12 && startHour < 18) return 'Evening';
+function category(startMins) {
+  // 6:00 AM (360 mins) to 6:30 PM (1110 mins) is Day
+  if (startMins >= 360 && startMins < 1110) return 'Day';
   return 'Night';
 }
 
 export const DEFAULT_SLOTS = Array.from({ length: 48 }, (_, i) => {
   const startMins = i * 30;
   const endMins   = startMins + 30;
-  const startHour = Math.floor(startMins / 60);
-  const cat       = category(startHour);
+  const cat       = category(startMins);
 
   return {
     id:      `slot-${i + 1}`,
@@ -53,6 +51,7 @@ export const DEFAULT_SLOTS = Array.from({ length: 48 }, (_, i) => {
     price:   SLOT_PRICES[cat],
   };
 });
+
 
 const COLLECTION = 'slots';
 

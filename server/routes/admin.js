@@ -274,7 +274,7 @@ function dashboardPage({ rows, totalBookings, confirmed, pending, totalRevenue, 
 }
 
 function slotManagerPage(date, slots) {
-  const CATEGORIES = ['Morning', 'Evening', 'Night'];
+  const CATEGORIES = ['Day', 'Night'];
   const grouped = {};
   CATEGORIES.forEach((c) => { grouped[c] = []; });
   slots.forEach((s) => { if (grouped[s.category]) grouped[s.category].push(s); });
