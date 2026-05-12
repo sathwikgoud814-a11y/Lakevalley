@@ -102,11 +102,6 @@ export class SlotGrid {
       });
       heading.textContent = `Available Slots — ${displayDate}`;
       this._container.appendChild(heading);
-
-      const urgency = document.createElement('p');
-      urgency.className = 'urgency-bar';
-      urgency.innerHTML = '🔥 Only 3 slots left today &nbsp;·&nbsp; ⚡ 7 people booked in the last 2 hours';
-      this._container.appendChild(urgency);
     }
 
     // ── Filter bar ────────────────────────────────────────

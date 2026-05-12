@@ -121,9 +121,23 @@ export async function getSlots(date) {
   await syncPrices();
   const statuses = await getSlotData(date);
 
+  // Get current time in IST
+  const now = new Date();
+  const options = { timeZone: 'Asia/Kolkata', hour12: false };
+  const istDate = now.toLocaleDateString('en-CA', options); // YYYY-MM-DD
+  const istTimeStr = now.toLocaleTimeString('en-GB', options); // HH:MM:SS
+  const [h, m] = istTimeStr.split(':').map(Number);
+  const istMins = h * 60 + m;
+
   return DEFAULT_SLOTS.map((slot) => {
     const currentPrice = SLOT_PRICES[slot.category] ?? slot.price;
     const raw = statuses[slot.id] ?? 'available';
+
+    // Check if slot is in the past for today
+    const startMins = (slot.slotNum - 1) * 30;
+    if (date === istDate && startMins < istMins) {
+      return { ...slot, price: currentPrice, status: 'blocked' };
+    }
 
     if (raw === 'available') return { ...slot, price: currentPrice, status: 'available' };
     if (raw === 'blocked') return { ...slot, price: currentPrice, status: 'blocked' };
