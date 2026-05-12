@@ -333,34 +333,10 @@ export class SlotGrid {
     statusGroup.appendChild(statusPills);
     bar.appendChild(statusGroup);
 
-    // ── Price ─────────────────────────────────────────────
-    const priceGroup = this._filterGroup('Price');
-    const pricePills = document.createElement('div');
-    pricePills.className = 'slots__filter-pills';
-
-    const priceOptions = [
-      { label: 'All', value: null },
-      { label: '≤ ₹300', value: 300 },
-      { label: '≤ ₹400', value: 400 },
-    ];
-
-    for (const opt of priceOptions) {
-      const isActive = this._maxPrice === opt.value;
-      pricePills.appendChild(
-        this._filterPill(opt.label, isActive, () => {
-          this._maxPrice = opt.value;
-          this.render();
-        })
-      );
-    }
-    priceGroup.appendChild(pricePills);
-    bar.appendChild(priceGroup);
-
     // ── Reset ─────────────────────────────────────────────
     const isDefaultState =
       this._activeCategories.size === CATEGORIES.length &&
-      !this._showAvailableOnly &&
-      this._maxPrice === null;
+      !this._showAvailableOnly;
 
     if (!isDefaultState) {
       const reset = document.createElement('button');
